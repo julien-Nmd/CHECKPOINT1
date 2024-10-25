@@ -3,7 +3,7 @@
 #### Exercice 1  
 ##### 1-  Lignes de code qui permettent de voir clairement :
 
-###### La création et le formatage des partitions  
+###### La création et taille des partitions  
 
 L'utilisateur choisi est root, ainsi on évite de lancer toutes les commandes en sudo.  
 
@@ -19,10 +19,36 @@ L'utilisateur choisi est root, ainsi on évite de lancer toutes les commandes en
   Puis nouvelle encore, Entrer (laisser sur 4 G, c'est le reste)  
   Puis Ecrire  
   Puis quitter  
+  <P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT1/blob/main/ex1_2.png" width=600></P>  
+
+  ###### formatage de DATA  
+  J'ai rentré les commandes suivantes pour :  
+  Formater le volume sdb1 en EXT4
+
+    mkfs.ext4 -L DATA /dev/sdb1
+
   
+  Création de la partition SWAP pour sdb2 :  
+
+    mkswap -L SWAP /dev/sdb2
+    fdisk /dev/sdb2  
+
+  Puis `n` pour nouvelle  
+  `p` pour primaire  
+  `1` pour le numéro de la partition  
+  `Entrer` pour les secteurs  
+  `t` pour le type  
+  `82` pour définir en SWAP  
+  `w` pour écrire  
+
+  ##### 2-  Montage  
   
-   
-  La taille des partitions
-  Le type de système de fichiers
-  La gestion du swap
-  Le nom des partitions
+ Créer un dossier pour le volume DATA
+
+    mkdir /mnt/DATA  
+
+ monter le volume DATA dans le dossier DATA :
+
+    mount -t ext4 /dev/sdb1 /mnt/DATA  
+
+
