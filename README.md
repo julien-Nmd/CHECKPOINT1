@@ -51,4 +51,17 @@ L'utilisateur choisi est root, ainsi on évite de lancer toutes les commandes en
 
     mount -t ext4 /dev/sdb1 /mnt/DATA  
 
+ visualisation du uuid du disque sdb avant édition du fichier fstab :  
+  
+     blkid  
+
+  edition du fichier fstab pour le mlntage auto au démarrage :  
+
+    nano /etc/fstab
+
+  <P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT1/blob/main/fstab.png" width=600></P>   
+
+  vérification du montage après redémarrage de la VM :  
+  
+ <P ALIGN="center"><IMG src="https://github.com/julien-Nmd/CHECKPOINT1/blob/main/lsblk.png" width=600></P> 
 
